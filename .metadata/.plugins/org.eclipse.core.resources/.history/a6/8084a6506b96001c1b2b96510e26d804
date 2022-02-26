@@ -1,0 +1,29 @@
+package gamemania.teste;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TesteLogin {
+	
+	private WebDriver driver;
+	
+	@Before
+	public void Setup() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver.exe");
+		
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("http://localhost:4200/login");
+	}
+			
+	@Test
+	public void TestarLogin() {
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+	}
+
+}
